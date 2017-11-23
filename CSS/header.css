@@ -1,0 +1,105 @@
+header{
+	width: 100%;
+	background: white;
+	text-align: center;
+	font-size: 1.3em;
+	letter-spacing: 2px;
+}
+#btn-menu{
+	display: none;
+}
+
+#logo{
+	cursor: pointer;
+	margin-top: 7px;
+	width: 180px;
+	height: 40px ;
+}
+
+#logoresp{
+	display: none;
+}
+
+header label{
+	display: none;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	border-right: 1px solid white;
+}
+
+header label:hover{
+	cursor: pointer;
+	background: rgba(0,0,0,0.3);
+}
+
+.menu ul{
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	display: flex;
+	/*justify-content: flex-end;*/
+}
+
+.menu li{
+	flex-grow: 1;
+	border-right: 1px solid white; 
+}
+
+.button{
+	background: green;
+}
+
+.menu .button:hover{
+	background: rgba(0,0,0,0.3);
+}
+
+.menu li .aa{
+	display: block;
+	padding: 15px 20px;
+	color: white;
+	text-decoration: none;
+}
+
+@media (max-width: 768px){
+
+	header{
+		background: green;
+	}
+
+	header label{
+		display: block;
+		background: green;
+	}
+
+	.menu {
+		position: absolute;
+		background: green;
+		width: 50%;
+		margin-left: -50%;
+		transition: all 0.4s;
+	}
+
+	#campofoto{
+		display: none;
+	}
+
+	/*#logoresp{
+		display: inline;
+		height: 40px;
+		width: 180px;
+	}*/
+	.menu ul{
+		flex-direction: column;
+		z-index: 2000;
+	}
+
+	.menu li{
+		border-top: 1px solid white;
+		background: green;
+	}
+
+	#btn-menu:checked ~ .menu{
+		margin: 0;
+	}
+}

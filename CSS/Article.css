@@ -1,0 +1,13 @@
+
+table{
+	font-family: cursive;
+	font-size: 24px;
+	color: black;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.tab{
+	border-bottom: 3px ridge green;
+}
+

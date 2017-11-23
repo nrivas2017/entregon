@@ -1,0 +1,23 @@
+body{
+	padding: 0;
+}
+
+
+nav{
+	font-family: monospace;
+	text-align: center;
+	margin-top: -30px;
+}
+
+a:link { color: black;}
+a:visited { color: black;}
+a:hover { font-size: 150%; color:#279109;}
+
+a{
+	text-decoration: none;
+}
+
+
+
+
+

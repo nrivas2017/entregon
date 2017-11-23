@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang=es>
+
+	<head>
+		<title>Entregón</title>
+		<meta charset="UTF-8">
+		    <link rel="shortcut icon" href="Fotos/entregon.ico" ><!--logo-->
+   			<link rel="icon" type="image/gif" href="Fotos/entregonani.gif" ><!--Animado-->
+   			<link rel="stylesheet" type="text/css" href="CSS/principal.css">
+   			<link rel="stylesheet" type="text/css" href="CSS/Article.css">
+   			<link rel="stylesheet" type="text/css" href="CSS/fonts.css">
+   			<link rel="stylesheet" type="text/css" href="CSS/social.css">
+   			<link rel="stylesheet" type="text/css" href="CSS/header.css">
+   			<script src="JS/Ajax.js"></script>
+	</head>
+
+
+	<body>
+		<header>
+			<input type="checkbox" id="btn-menu">
+			<label for="btn-menu"><img src="Fotos/BTN.png"></label>
+			<img  id="logoresp" src="Fotos/3.png">
+			<nav class="menu">
+				<ul>
+					<li id="campofoto"><a href="MaquetaDesWeb.html"><img  href="google.com" id="logo" src="Fotos/3.png"></a></li>
+					<li class="button"><a class="aa" href="#">Promociones</a></li>
+					<li class="button"><a class="aa" href="#"  onclick="AjaxMuestra('ComidaCasera')">Comida Casera</a></li>
+					<li class="button"><a class="aa"  href="#"  onclick="AjaxMuestra('Pizza')">Pizzas</a></li>
+					<li class="button"><a class="aa" href="#"  onclick="AjaxMuestra('Sandwichs')">Sandwichs</a></li>
+					<li class="button"><a class="aa" href="#"  onclick="AjaxMuestra('Salchipapa')">Salchipapas</a></li>
+					<li class="button"><a class="aa" href="#"  onclick="AjaxMuestra('ParaBeber')">Para beber</a></li>
+				</ul>
+			</nav>
+		</header>
+
+
+
+
+		<div id="cuerpo">
+			<div class="social">
+				<ul>
+					<li><a href="#" target="_blank" class="icon-facebook"></a></li>
+					<li><a href="#" target="_blank" class="icon-twitter"></a></li>
+					<li><a href="#" target="_blank" class="icon-mail"></a></li>
+					<li><a href="#" target="_blank" class="icon-instagram"></a></li>
+				</ul>
+			</div>
+
+			<section>
+				<article id="lista" class="modulo scroll">LISTA DESPLEGADA DEL NAV</article>
+
+				<aside id="carrito">CARRITO CON LO QUE SE HA SELECCIONADO DE LA LISTA</aside>
+			</section>
+		</div>
+
+		<footer>&copy; 2013-2017 Entregon</footer>
+		
+	</body>
+
+</html>

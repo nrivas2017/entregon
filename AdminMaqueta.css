@@ -1,0 +1,43 @@
+body{
+	background: url("fondoindex.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: 0;
+}
+
+
+nav{
+	font-family: monospace;
+	text-align: center;
+}
+
+a:link { color: white;}
+a:visited { color: white; text-decoration: none;}
+a:hover { font-size: 150%; color:#279109; text-decoration: none;}
+
+a{
+	text-decoration: none;
+}
+
+#grande{
+	width: 45%;
+	background: rgba(0,0,0,0.5);
+	margin: 0 auto;
+	margin-top: 100px;
+	border-width:5px;  
+    border-style:ridge;
+    border-radius: 10px;
+}
+
+#capa{
+	text-align: center;
+	color: white;
+	margin: 0 auto;
+
+}
+#capa table{
+	text-align: center;
+	color: white;
+	margin: 0 auto;
+}

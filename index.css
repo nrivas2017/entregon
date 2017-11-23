@@ -1,0 +1,80 @@
+body{
+	background: url("fondoindex.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: 0;
+}
+
+#logo{
+	cursor: pointer;
+	margin-top: -9px;
+	width: 170px;
+	height: 40px;
+}
+
+#menu ul{
+	margin-left: 20px;
+}
+#menu li{
+	width: 180px;
+}
+
+.container{
+	margin-top: 40px;
+}
+
+#cuerpo{
+	color: white;
+	font-size: 18px;
+	margin-top: 100px;
+}
+
+table form{
+	color: black;
+}
+
+#myModal {
+	color: black;
+}
+
+#lista{
+	background: rgba(0,0,0,0.5);
+	height: 300px;
+	float: left;
+	border-radius: 10px;
+}
+
+#lista h1{
+	text-align: center;
+}
+
+.scroll {
+	overflow-y: scroll;
+}
+
+#carrito{
+	background: rgba(0,0,0,0.5);
+	height: 300px;
+	float: left;
+	border-radius: 10px;
+}
+
+#carrito h3 {
+    font-size: 22px;
+    font-family: UnitedSans,tahoma,helvetica,arial,sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+
+footer{
+	background: rgba(0,0,0,0.5);
+	height: 100px;
+	text-align: center;
+	font-size: 1.3em;
+	color: white;
+	letter-spacing: 2px;
+	margin-top: 89px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang=es>
+
+	<head>
+		<title>Pedido</title>
+		<meta charset="UTF-8">
+		    <link rel="shortcut icon" href="Fotos/entregon.ico" ><!--logo-->
+   			<link rel="icon" type="image/gif" href="Fotos/entregonani.gif" ><!--Animado-->
+   			<link rel="stylesheet" type="text/css" href="CSS/entregon.css">
+   			<link rel="stylesheet" type="text/css" href="CSS/Form.css">
+   			<script type="text/javascript" src="JS/formulario.js"></script>
+	</head>
+
+
+	<body>
+		
+		<header id="top">
+		<img src="Fotos/3.png" alt="entregon" id="entregon-top">
+		<img src="Fotos/asd.png" alt="fondo" id="fondo">
+		</header>
+
+
+		<nav>
+			<h2><a href="MaquetaDesWeb.html">Home</a>
+			</h2>
+		</nav>
+
+		<div id="capagrande">
+		<aside id="cpedido">Aquí ira el carrito, que tendra los datos para ingresar el pedido a la BD</aside>
+
+		<div id="formu">
+ 			<form action="PHP/IngresaCli.php" method="GET" onsubmit="return Validar(this)">
+				<fieldset>
+					<legend>Datos entrega</legend>
+
+					<label>Nombre</label>
+					<input type="text" name="nom" class="campo" placeholder="Nombre"><br>
+					<div id="mensaje1" class="errores">Ingrese Nombre</div>
+
+					<label>Telefono</label>
+					<input type="tel" name="fon" class="campo" placeholder="9 9999 9999"><br>
+					<div id="mensaje2" class="errores">Ingrese Telefono</div>
+
+					<label>Email</label>
+					<input type="email" name="ema" class="campo" placeholder="xxxxx@xxx.xx"><br>
+					<div id="mensaje3" class="errores">Ingrese Email</div>
+
+					<label>Dirección</label>
+					<input type="text" name="calle" class="campo" placeholder="Calle/Pasaje"><br>
+					<div id="mensaje4" class="errores">Ingrese Dirección</div>
+
+					<label>Referencia</label>
+					<textarea name="area" class="campo"></textarea><br>
+
+					<input type="submit" name="boton" class="boton">
+				</fieldset>	 
+				
+			</form>
+		</div>
+		</div>
+	</body>
+
+</html>

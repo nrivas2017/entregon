@@ -1,0 +1,53 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+section{
+	width: auto;
+	height: auto;
+	margin-top: 110px;
+	margin-left: 20%;
+	font-size: 30px;
+	color: black;
+	display: inline-block; /*Se adapta al contenido*/
+}
+
+#lista {
+	border-radius: 10px;
+	background: url("../Fotos/LI.png");
+	width: 500px;
+	height: 300px;
+	/*background-color: #137409;*/
+	float: left;
+}
+
+#lista ul{
+	list-style: none;
+}
+
+.scroll {
+	overflow-y: scroll;
+}
+
+#carrito {
+	border-radius: 10px;
+	background: url("../Fotos/CA.png");
+	width: 400px;
+	height: 300px;
+	/*background-color: #137409;*/
+	float: left;
+	margin-left: 30px;
+}
+
+footer {
+	height: 30px;
+	background-color: green;
+	text-align: center;
+	font-weight: 800;
+	font-size: 1.3em;
+	color: white;
+	letter-spacing: 2px;
+	margin-top: 139px;
+	padding-top: 20px;
+}
