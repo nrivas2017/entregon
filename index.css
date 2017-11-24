@@ -16,8 +16,9 @@ body{
 #menu ul{
 	margin-left: 20px;
 }
-#menu li{
-	width: 180px;
+#menu li .item{
+	width: 130px;
+	text-align: center;
 }
 
 .container{
@@ -25,7 +26,6 @@ body{
 }
 
 #cuerpo{
-	color: white;
 	font-size: 18px;
 	margin-top: 100px;
 }
@@ -34,7 +34,7 @@ table form{
 	color: black;
 }
 
-#myModal {
+#myModal{
 	color: black;
 }
 
