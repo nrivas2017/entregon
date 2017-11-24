@@ -16,8 +16,9 @@ body{
 #menu ul{
 	margin-left: 20px;
 }
-#menu li{
-	width: 180px;
+#menu li .item{
+	width: 130px;
+	text-align: center;
 }
 
 .container{
