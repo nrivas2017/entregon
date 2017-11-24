@@ -8,7 +8,23 @@
 
 
 	
-	if($respuesta)
-		echo "<h1>El producto se ha actualizado</h1>";
-	echo "<a href='../Admin.html'>Volver</a>";
+	if($respuesta){?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Actualiza</title>
+</head>
+<body>
+
+
+<h1>El producto se ha actualizado</h1>
+<a href='../AdminMaqueta.php'>Volver</a>
+</body>
+</html>
+
+<?php 
+}else{
+	echo "Error";
+}
 ?>

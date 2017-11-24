@@ -13,7 +13,7 @@
 		echo "<tr><td>$fila->ID_Producto</td>
 				  <td>$fila->Nombre</td>
 			      <td>$fila->Precio</td>
-			      <td><img src='Fotos/trash.png' style='height:28px;width:28px;' onclick='AjaxElimina($fila->ID_Producto)'> </td>
-			      <td><img src='Fotos/edit.png' style='height:28px;width:28px;' onclick='AjaxEdita()'> </td></tr>";
+			      <td<a href='#' onclick='EliminaPed($fila->N_Pedido)'><span class='glyphicon glyphicon-trash'></span></a></td>
+			      <td><button class='btn btn-success' onclick='PedListo($fila->N_Pedido)'>LISTO</button></td></td></tr>";
 	echo "</table>";
 ?>

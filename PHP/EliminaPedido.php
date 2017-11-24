@@ -18,7 +18,7 @@
 			      <td>$fila->Email</td>
 			      <td>$fila->FechaHora</td>
 			      <td>$fila->Estado</td>
-			      <td><img src='Fotos/trash.png' style='height:28px;width:28px;' onclick='EliminaPed($fila->N_Pedido)'> </td>
+			      <td><a href='#' onclick='EliminaPed($fila->N_Pedido)'><span class='glyphicon glyphicon-trash'></span></a></td>
 			      <td><button onclick='PedListo($fila->N_Pedido)'>LISTO</button></td></tr>";
 	echo "</table>";
 ?>
