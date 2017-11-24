@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2017 a las 22:25:49
+-- Tiempo de generación: 24-11-2017 a las 18:49:27
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -70,6 +70,19 @@ INSERT INTO `cliente` (`N_Telefono`, `Nombre`, `Email`, `Direccion`, `Referencia
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(5) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `pass` int(15) NOT NULL,
+  `tipo` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `pedido`
 --
 
@@ -95,10 +108,10 @@ INSERT INTO `pedido` (`N_Pedido`, `Email`, `FechaHora`, `Estado`) VALUES
 
 CREATE TABLE `producto` (
   `ID_Producto` int(6) NOT NULL,
-  `Nombre` char(50) CHARACTER SET latin1 NOT NULL,
-  `Precio` int(5) NOT NULL,
+  `Nombre` char(100) CHARACTER SET latin1 NOT NULL,
+  `Precio` int(6) NOT NULL,
   `Descripcion` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `Fotos` varchar(30) CHARACTER SET latin1 DEFAULT NULL,
+  `Fotos` varchar(150) CHARACTER SET latin1 DEFAULT NULL,
   `Tipo` char(30) CHARACTER SET latin1 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -108,16 +121,16 @@ CREATE TABLE `producto` (
 
 INSERT INTO `producto` (`ID_Producto`, `Nombre`, `Precio`, `Descripcion`, `Fotos`, `Tipo`) VALUES
 (1, 'Casuela de pollo', 2500, 'asfsdfsa', 'CPollo.jpg', 'ComidaCasera'),
-(2, 'Pizza Napolitana Familiar', 4000, NULL, 'PNapolitana.jpg', 'Pizza'),
-(3, 'Salchipapa Chica', 1000, NULL, 'PChica.jpg', 'Salchipapa'),
-(4, 'Salchipapa Grande', 1500, NULL, 'PGrande.jpg', 'Salchipapa'),
-(5, 'Pizza Vegetariana 2 pers', 6000, NULL, 'PVegetariana.jpg', 'Pizza'),
-(6, 'CocaCola 1.5lts', 1200, NULL, 'CC15.jpg', 'ParaBeber'),
-(7, 'Jugo 1.5lts Piña', 1500, NULL, 'Jugo15.jpg', 'ParaBeber'),
-(8, 'Casuela de vacuno', 3200, NULL, 'CVacuno.jpg', 'ComidaCasera'),
-(9, 'Churrasco Italiano', 2800, NULL, 'ChItaliano.jpg', 'Sandwichs'),
-(10, 'Chacarero', 3300, NULL, 'Chacarero.jpg', 'Sandwichs'),
-(14, 'Cerveza Artesanal', 2500, NULL, 'CArtesanal.jpg', 'ParaBeber');
+(2, 'Pizza Napolitana Familiar', 4000, 'safdsadf', 'PNapolitana.jpg', 'Pizza'),
+(3, 'Salchipapa Chica', 1000, 'asfdsadf', 'PChica.jpg', 'Salchipapa'),
+(4, 'Salchipapa Grande', 1500, 'asdfasdf', 'PGrande.jpg', 'Salchipapa'),
+(5, 'Pizza Vegetariana 2 pers', 6000, 'sadfsadf', 'PVegetariana.jpg', 'Pizza'),
+(6, 'CocaCola 1.5lts', 1200, 'asfdsadf', 'CC15.jpg', 'ParaBeber'),
+(7, 'Jugo 1.5lts Piña', 1500, 'asdfasdf', 'Jugo15.jpg', 'ParaBeber'),
+(8, 'Casuela de vacuno', 3200, 'asdfsdfasdf', 'CVacuno.jpg', 'ComidaCasera'),
+(9, 'Churrasco Italiano', 2800, 'sadfsdaf', 'ChItaliano.jpg', 'Sandwichs'),
+(10, 'Chacarero', 3300, 'asfdsadf', 'Chacarero.jpg', 'Sandwichs'),
+(14, 'Cerveza Artesanal', 2500, 'asdfsadf', 'CArtesanal.jpg', 'ParaBeber');
 
 --
 -- Índices para tablas volcadas
@@ -136,6 +149,12 @@ ALTER TABLE `carrito`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`Email`);
+
+--
+-- Indices de la tabla `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `pedido`
@@ -160,6 +179,11 @@ ALTER TABLE `producto`
 ALTER TABLE `carrito`
   MODIFY `ID_Carrito` int(6) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
@@ -168,7 +192,7 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `ID_Producto` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID_Producto` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- Restricciones para tablas volcadas
 --
