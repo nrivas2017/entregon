@@ -31,6 +31,7 @@
 
         function Principal(){
           $(".item").click(Busca);
+          $("#reg").click(Form);
         }
 
         function Busca(){
@@ -41,6 +42,14 @@
               }
           })
         }
+        function Form(){
+          $.ajax({
+            url:"registro.html",
+            success: function(datos){
+              $('#lista').html(datos)
+              }
+            })
+        } 
     </script>
 </head>
 <body>
@@ -59,9 +68,9 @@
 				  <li><a class="item" id="Sandwichs" href="#"  >Sandwichs</a></li>
 				  <li><a class="item" id="Salchipapa" href="#"  >Salchipapas</a></li>
 				  <li><a class="item" id="ParaBeber" href="#"  >Para beber</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-          <li class="login"><a href="#"><span class="glyphicon glyphicon-user"></span> Iniciar sesión</a></li>
-          <li class="login"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Registrarse</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#myModal"><?=$cart->get_total_items();?><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+          <li class="login"><a href="#" id="ini_se"><span class="glyphicon glyphicon-user"></span> Iniciar sesión</a></li>
+          <li class="login"><a href="#" id="reg"><span class="glyphicon glyphicon-log-in"></span> Registrarse</a></li>
     		</ul>
   		</div>
 	</nav>
@@ -73,35 +82,34 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+
+
+          <button type="button" class="close" data-dismiss="modal"><a href="#"><span class="glyphicon glyphicon-remove"></span></a></button>
         </div>
         <div class="modal-body">
-          <table class="table" border="1px" cellpadding="5px" width="100%">
+          <table class="table" cellpadding="5px" width="100%">
             <thead class="cartHeader" display="off">
               <tr>
-                <th colspan="6">MI CARRITO DE COMPRAS</th>
-              </tr>
-              <tr>
-                <th colspan="3">Total pagar: <?=$cart->get_total_payment();?></th>
-                <th colspan="3"><button>Finalizar</button></th>
-              </tr>
-            </thead>
-            <tbody class="cartBody">
-              <tr>
-                <th>id</th>
                 <th>Producto</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Subtotal</th>
-                <th>Opcion</th>
+                <th></th>
               </tr>
+            </thead>
+            <tbody class="cartBody">
+              
               <?=$cart->get_items();?>
             </tbody>
           </table>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <table class="table">
+            <tr>
+              <th colspan="3">Total pagar: $<?=$cart->get_total_payment();?></th>
+              <th colspan="3"><button disabled="true" class="btn btn-success">Confirmar Pedido</button></th>
+            </tr>
+          </table>
         </div>
       </div>
       
@@ -112,7 +120,7 @@
      <div class="row">
       <div class="col-sm-3"></div>
       <div id="lista" class="scroll col-sm-6">
-        <h1>¿Qué vas a Pedir?</h1>
+        <h1><br><br>¿Qué vas a Pedir?</h1>
       </div>
       
       <div class="col-sm-3"></div>

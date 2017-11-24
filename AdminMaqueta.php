@@ -21,7 +21,9 @@ if($_SESSION['estado'] != "logeado")
 	<body>
 		<header>
 		<nav>
-			<h2><a href="#" onclick="AdminMuestra('Prod')">Productos</a> |  
+			<h2>
+				<a href="#" onclick="AdminIngre()">Nuevo Producto</a> |
+				<a href="#" onclick="AdminMuestra('Prod')">Productos</a> |  
 				<a href="#" onclick="AdminMuestra('Ped')">Pedidos</a> |
 				<a href="cerrarSesion.php"> Cerrar Sesión </a>
 			</h2>

@@ -17,14 +17,14 @@
         $code = "'".$key['ID_Producto']."'";
         $html .= '<tr>
                     <td><img src="Fotos/'.$key['Fotos'].'"></td>
-                    <td>'.$key['Nombre'].'</td>
-                    <td>'.$key['Descripcion'].'</td>
-                    <td align="right">'.$key['Precio'].'</td>
-                    <td align="right">
-                      <input type="number" id="'.$key['ID_Producto'].'" value="1" min="1">
+                    <td class="text_table">'.$key['Nombre'].'</td>
+                    <td class="text_table">'.$key['Descripcion'].'</td>
+                    <td class="text_table">'.$key['Precio'].'</td>
+                    <td>
+                      <input style="color: black;" type="number" id="'.$key['ID_Producto'].'" value="1" min="1">
                     </td>
                     <td>
-                      <button onClick="addProduct('.$code.');">
+                      <button class="btn btn-success" onClick="addProduct('.$code.');">
                         Agregar
                       </button>
                     </td>

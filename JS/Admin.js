@@ -88,3 +88,16 @@ function VerPed(){
 	if(objAjax.readyState==4)
 		document.getElementById("capa").innerHTML = objAjax.responseText;
 		}
+
+function AdminIngre(){
+	url = "PHP/FormProd.php";
+	objAjax.open("GET",url)
+	objAjax.send(null)
+//PASO03: Recibir la respuesta del servidor
+	objAjax.onreadystatechange = VerForm;
+}
+
+function VerForm(){
+	if(objAjax.readyState==4)
+		document.getElementById("capa").innerHTML = objAjax.responseText;
+		}

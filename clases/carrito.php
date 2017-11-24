@@ -47,13 +47,12 @@
 	    		foreach ($this->cart as $key){
 	    			$code = "'".$key['code']."'";
 					$html .= '<tr>
-								<td>'.$key['code'].'</td>
 								<td>'.$key['product'].'</td>
 								<td align="right">'.number_format($key['price']).'</td>
 								<td align="right">'.$key['amount'].'</td>
 								<td align="right">'.number_format($key['subtotal']).'</td>
 								<td>
-									<button onClick="deleteProduct('.$code.');">
+									<button class="btn btn-danger" onClick="deleteProduct('.$code.');">
 				                    	Eliminar
 				                    </button>
 								</td>	
