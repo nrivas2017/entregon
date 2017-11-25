@@ -11,6 +11,6 @@ if($user=="admin" && $passw=="1234") {
 	header("Location: AdminMaqueta.php");      //redirecciona al script Admin.php
 	}
 else {
-	header("Location: sesion.php?error=Usuario+o+contraseña+inválida");  //redirecciona al inicio enviando un msj de error como parámetro
+	header("Location: index.php?error=Usuario+o+contraseña+inválida");  //redirecciona al inicio enviando un msj de error como parámetro
 	}
 ?>

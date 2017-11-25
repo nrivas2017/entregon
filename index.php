@@ -72,9 +72,12 @@
           <li><a href="#" data-toggle="modal" data-target="#myModal"><?=$cart->get_total_items();?><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
           <li class="login dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Iniciar sesión</a>
             <ul class="dropdown-menu" id="cuadro_sesion">
-              <li><label class="lab_se">Email:</label><input type="text" name="user"></li>
-              <li><label class="lab_se">Contraseña:</label><input type="password" name="pass"></li><br>
+              <form action="validar.php" method="POST">
+              <li><input type="text" name="user" placeholder="&#128272; Email"></li>
+              <li><input type="password" name="pass" placeholder="&#128272; Constraseña"></li><br>
               <li><input class="btn btn-success" type="submit" value="Ingresar"></li>
+              <li><div id='error'><?php if(isset($_GET['error'])){$error = $_GET['error']; echo $error;}?></div></li>
+              </form>
             </ul></li>
           <li class="login"><a href="#" id="reg"><span class="glyphicon glyphicon-log-in"></span> Registrarse</a></li>
     		</ul>

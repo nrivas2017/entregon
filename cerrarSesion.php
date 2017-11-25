@@ -8,6 +8,6 @@ session_unset();
 session_destroy();
 
 //Y me voy al inicio
-header("Location: sesion.php");
+header("Location: index.php");
 
 ?>

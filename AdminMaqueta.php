@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['estado'] != "logeado")
-  header("Location: sesion.php");
+  header("Location: index.php");
 ?>
 <!DOCTYPE html>
 <html>

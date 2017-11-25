@@ -15,6 +15,9 @@
 			input[type=submit]{
 				margin-left: 100px;
 			}
+			label{
+				width: 100px;
+			}
 		</style>
 	</head>
 
@@ -53,7 +56,7 @@
 				<label>Descripcion: </label>
 				<textarea form="formprod" name="desc" rows="4" cols="30" required placeholder="Nueva descripción del Producto..."></textarea><br>
 
-				<input type="submit" class="boton btn btn-success" name="enviar">
+				<input type="submit" class="boton btn btn-success" value="Actualizar">
 				</div>
 		</form>
 	</body>
