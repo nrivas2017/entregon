@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['estado'] != "logeado")
+if($_SESSION['estado'] != "admin")
   header("Location: index.php");
 ?>
 <!DOCTYPE html>

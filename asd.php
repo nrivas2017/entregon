@@ -15,7 +15,6 @@ if(isset($res->email)){
 		header("Location: AdminMaqueta.php");
 	}else{
 		$_SESSION['estado'] = "user";
-		$_SESSION['email'] = "$user";
 		header("Location: index.php");
 	}
 }else{
