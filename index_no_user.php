@@ -57,7 +57,7 @@
           <li class="login dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Iniciar sesión</a>
             <ul class="dropdown-menu" id="cuadro_sesion">
               <form action="validar.php" method="POST">
-              <li><input type="text" name="user" placeholder="&#128272; Email"></li>
+              <li><input type="text" name="ema" placeholder="&#128272; Email"></li>
               <li><input type="password" name="pass" placeholder="&#128272; Constraseña"></li><br>
               <li><input class="btn btn-success" type="submit" value="Ingresar"></li>
               <li><div id='error'><?php if(isset($_GET['error'])){$error = $_GET['error']; echo $error;}?></div></li>

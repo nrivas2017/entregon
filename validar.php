@@ -2,10 +2,10 @@
 session_start();
 include("PHP/conex.inc");
 
-$user = $_POST["user"];
+$ema = $_POST["ema"];
 $passw = $_POST["pass"];
 
-$consulta = "SELECT email,pass,tipo FROM login WHERE email='$user' AND pass='$passw'";
+$consulta = "SELECT nombre,email,pass,tipo FROM login WHERE email='$ema' AND pass='$passw'";
 $respuesta = mysqli_query($db, $consulta);
 $res=mysqli_fetch_object($respuesta);
 if(isset($res->email)){
@@ -14,8 +14,9 @@ if(isset($res->email)){
 		$_SESSION['estado'] = "admin";
 		header("Location: AdminMaqueta.php");
 	}else{
+		$nombre=$res->nombre;
 		$_SESSION['estado'] = "user";
-		$_SESSION['email'] = "$user";
+		$_SESSION['nombre'] = "$nombre";
 		header("Location: index.php");
 	}
 }else{

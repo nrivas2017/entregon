@@ -54,7 +54,7 @@
 				  <li><a class="item" id="Salchipapa" href="#"  >Salchipapas</a></li>
 				  <li><a class="item" id="ParaBeber" href="#"  >Para beber</a></li>
           <li><a href="#" data-toggle="modal" data-target="#myModal"><?=$cart->get_total_items();?><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-          <li><a>Bienvenido <?php $usr=$_SESSION['email']; echo "$usr"; ?></a></li>
+          <li><a>Bienvenido <?php $usr=$_SESSION['nombre']; echo "$usr"; ?></a></li>
           <li><a href="cerrarSesion.php"> Cerrar Sesión </a></li>
 
     		</ul>
