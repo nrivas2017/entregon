@@ -4,7 +4,7 @@
 	$nom = $_GET["nom"];
 	$pre = $_GET["pre"];
 	$desc = $_GET["desc"];
-	$consulta = "UPDATE `producto` SET `Nombre`='$nom',`Precio`='$pre',`Descripcion`='$desc' WHERE ID_Producto='$id'";
+	$consulta = "UPDATE `producto` SET `Nombre`='$nom',`Precio`='$pre',`Descripcion`='$desc' WHERE Id_Producto='$id'";
 	$respuesta = mysqli_query($db, $consulta);
 
 

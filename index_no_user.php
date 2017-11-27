@@ -19,8 +19,28 @@
         }
 
         function Busca(){
+          var x=this.id;
+          if (x=="Promociones"){
+            x=2;
+          }
+          if (x=="Comida"){
+            x=3;
+          }
+          if (x=="Pizzas"){
+            x=1;
+          }
+          if (x=="Sandwichs"){
+            x=6;
+          }
+          if (x=="Salchipapas"){
+            x=4;
+          }
+          if (x=="beber"){
+            x=5;
+          }
+
           $.ajax({
-            url:"php/muestra.php?tipo="+this.id ,
+            url:"php/muestra.php?tipo="+x ,
             success: function(datos){
               $('#lista').html(datos)
               }
@@ -47,20 +67,19 @@
     		</div>
 
    			<ul class="nav navbar-nav">
-      		<li><a class="item" id="Promocion" href="#">Promociones</a></li>
-				  <li><a class="item" id="ComidaCasera" href="#"  >Comida Casera</a></li>
-				  <li><a class="item" id="Pizza" href="#"  >Pizzas</a></li>
+      		<li><a class="item" id="Promociones" href="#">Promociones</a></li>
+				  <li><a class="item" id="Comida" href="#"  >Comida Casera</a></li>
+				  <li><a class="item" id="Pizzas" href="#"  >Pizzas</a></li>
 				  <li><a class="item" id="Sandwichs" href="#"  >Sandwichs</a></li>
-				  <li><a class="item" id="Salchipapa" href="#"  >Salchipapas</a></li>
-				  <li><a class="item" id="ParaBeber" href="#"  >Para beber</a></li>
+				  <li><a class="item" id="Salchipapas" href="#"  >Salchipapas</a></li>
+				  <li><a class="item" id="beber" href="#"  >Para beber</a></li>
           <li><a href="#" data-toggle="modal" data-target="#myModal"><?=$cart->get_total_items();?><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
           <li class="login dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Iniciar sesión</a>
             <ul class="dropdown-menu" id="cuadro_sesion">
               <form action="validar.php" method="POST">
               <li><input type="text" name="ema" placeholder="&#128272; Email"></li>
               <li><input type="password" name="pass" placeholder="&#128272; Constraseña"></li><br>
-              <li><input class="btn btn-success" type="submit" value="Ingresar"></li>
-              <li><div id='error'><?php if(isset($_GET['error'])){$error = $_GET['error']; echo $error;}?></div></li>
+              <li><input class="btn btn-success" type="submit" value="Ingresar"></li>             
               </form>
             </ul></li>
           <li class="login"><a href="#" id="reg"><span class="glyphicon glyphicon-log-in"></span> Registrarse</a></li>
@@ -113,7 +132,16 @@
      <div class="row">
       <div class="col-sm-3"></div>
       <div id="lista" class="scroll col-sm-6">
-        <h1><br><br>¿Qué vas a Pedir?</h1>
+        <h1><br><br>
+          <?php
+          if(isset($_GET['msj'])){
+            $msj=$_GET['msj'];
+            echo "$msj";
+          }else{
+            echo "¿Qué vas a Pedir?";
+          }
+          ?>
+        </h1>
       </div>
       
       <div class="col-sm-3"></div>

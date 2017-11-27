@@ -47,10 +47,10 @@
 	    		foreach ($this->cart as $key){
 	    			$code = "'".$key['code']."'";
 					$html .= '<tr>
-								<td>'.$key['product'].'</td>
-								<td align="right">'.number_format($key['price']).'</td>
-								<td align="right">'.$key['amount'].'</td>
-								<td align="right">'.number_format($key['subtotal']).'</td>
+								<td class="nombre">'.$key['product'].'</td>
+								<td class="precio">'.$key['price'].'</td>
+								<td class="cantidad">'.$key['amount'].'</td>
+								<td class="subtotal">'.$key['subtotal'].'</td>
 								<td>
 									<button class="btn btn-danger" onClick="deleteProduct('.$code.');">
 				                    	Eliminar
@@ -79,7 +79,7 @@
 					$total += $key['subtotal'];
 				}
 	    	}
-	    	return number_format($total);
+	    	return $total;
 	    }
 
 		public function update_cart(){

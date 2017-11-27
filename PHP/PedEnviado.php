@@ -13,6 +13,9 @@
 		<div>
 			<?php
 				include("conex.inc");
+				$id = $_GET["id"];
+				$consulta = "UPDATE `pedido` SET `Id_Estado`= '1' WHERE Id_Pedido='$id'";
+				$respuesta = mysqli_query($db, $consulta);
 
 				$consulta = "SELECT pe.Id_Pedido, cli.Direccion, pe.FechaHora, e.N_Estado
 							FROM pedido as pe
@@ -21,7 +24,7 @@
 							INNER JOIN estado as e
 							ON pe.Id_Estado=e.Id_Estado";
 				$respuesta = mysqli_query($db, $consulta);
-				echo "<table><tr> <td><b>N° Pedido</b></td> <td><b>Direccion</b></td>  <td><b>FechaHora</b></td> <td><b>Estado</b></td> <td></td> <td></td><td></td></tr>";
+				echo "<table><tr> <td><b>N° Pedido</b></td> <td><b>Direccion</b></td>  <td><b>FechaHora</b></td> <td><b>Estado</b></td> <td></td> <td></td></tr>";
 				while($fila=mysqli_fetch_object($respuesta))
 					echo "<tr><td>$fila->Id_Pedido</td>
 			      		<td>$fila->Direccion</td>
@@ -48,6 +51,7 @@
 
         <div style="color:black;" id="mod_body"></div>
 
+	</body>
 	</body>
 
 </html>

@@ -9,17 +9,17 @@
 <body>
 <?php
 	include("conex.inc");
-	$tipo = $_GET["tipo"];
+	$cate = $_GET["tipo"];
 
-	$consulta = "SELECT ID_Producto, Nombre, Precio, Fotos, Descripcion FROM producto WHERE Tipo='$tipo'";
+	$consulta = "SELECT Id_Producto, Nombre, Precio, Foto, Descripcion FROM producto WHERE Id_Categoria=$cate";
 	$respuesta = mysqli_query($db, $consulta);
 
 	echo "<table class='table'>";
 	while($fila=mysqli_fetch_object($respuesta))
-		echo "<tr><td rowspan='3' class='fotopro'><img src='Fotos/$fila->Fotos'></td><td>$fila->Nombre</td><td>$ $fila->Precio</td></tr>
+		echo "<tr><td rowspan='3' class='fotopro'><img src='Fotos/$fila->Foto'></td><td>$fila->Nombre</td><td>$ $fila->Precio</td></tr>
 			    <tr><td colspan='2'><p>$fila->Descripcion</p></td></tr>
-			    <tr><td><input type='number' id='$fila->ID_Producto' size='1' min='1' max='10' value='1'></td>
-			    <td><button type='submit' onClick='addProduct($fila->ID_Producto);' value='$fila->Nombre' class='btn btn-default'>Agregar</button></td></tr>";
+			    <tr><td><input type='number' id='$fila->Id_Producto' size='1' min='1' max='10' value='1'></td>
+			    <td><button type='submit' onClick='addProduct($fila->Id_Producto)' value='$fila->Nombre' class='btn btn-default'>Agregar</button></td></tr>";
 	echo "</table>";
 ?>
 </body>

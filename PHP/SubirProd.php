@@ -27,7 +27,26 @@ $pre = $_POST["pre"];
 $tipo = $_POST["tipo"];
 $desc = $_POST["desc"];
 
-$consulta = "INSERT INTO `producto`(`Nombre`,`Precio`, `Descripcion`, `Fotos`, `Tipo`) VALUES ('$nom','$pre','$desc','$NuevoNombre','$tipo')";
+if ($tipo=="Pizza"){
+  $tipo="1";
+}
+if ($tipo=="Promocion"){
+  $tipo="2";
+}
+if ($tipo=="ComidaCasera"){
+  $tipo="3";
+}
+if ($tipo=="Salchipapa"){
+  $tipo="4";
+}
+if ($tipo=="ParaBeber"){
+  $tipo="5";
+}
+if ($tipo=="Sandwichs"){
+  $tipo="6";
+}
+
+$consulta = "INSERT INTO `producto`(`Nombre`,`Precio`, `Descripcion`, `Foto`, `Id_Categoria`) VALUES ('$nom','$pre','$desc','$NuevoNombre','$tipo')";
 	$respuesta = mysqli_query($db, $consulta);
 
 	if($respuesta){

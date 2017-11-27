@@ -10,6 +10,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/pedido.js"></script>
     <script>
       $(document).ready(Principal);
 
@@ -19,8 +20,28 @@
         }
 
         function Busca(){
+          var x=this.id;
+          if (x=="Promociones"){
+            x=2;
+          }
+          if (x=="Comida"){
+            x=3;
+          }
+          if (x=="Pizzas"){
+            x=1;
+          }
+          if (x=="Sandwichs"){
+            x=6;
+          }
+          if (x=="Salchipapas"){
+            x=4;
+          }
+          if (x=="beber"){
+            x=5;
+          }
+
           $.ajax({
-            url:"php/muestra.php?tipo="+this.id ,
+            url:"php/muestra.php?tipo="+x ,
             success: function(datos){
               $('#lista').html(datos)
               }
@@ -47,14 +68,15 @@
     		</div>
 
    			<ul class="nav navbar-nav">
-      		<li><a class="item" id="Promocion" href="#">Promociones</a></li>
-				  <li><a class="item" id="ComidaCasera" href="#"  >Comida Casera</a></li>
-				  <li><a class="item" id="Pizza" href="#"  >Pizzas</a></li>
-				  <li><a class="item" id="Sandwichs" href="#"  >Sandwichs</a></li>
-				  <li><a class="item" id="Salchipapa" href="#"  >Salchipapas</a></li>
-				  <li><a class="item" id="ParaBeber" href="#"  >Para beber</a></li>
+      		<li><a class="item" id="Promociones" href="#">Promociones</a></li>
+          <li><a class="item" id="Comida" href="#"  >Comida Casera</a></li>
+          <li><a class="item" id="Pizzas" href="#"  >Pizzas</a></li>
+          <li><a class="item" id="Sandwichs" href="#"  >Sandwichs</a></li>
+          <li><a class="item" id="Salchipapas" href="#"  >Salchipapas</a></li>
+          <li><a class="item" id="beber" href="#"  >Para beber</a></li>
           <li><a href="#" data-toggle="modal" data-target="#myModal"><?=$cart->get_total_items();?><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
           <li><a>Bienvenido <?php $usr=$_SESSION['nombre']; echo "$usr"; ?></a></li>
+          <li><?php $id_cl=$_SESSION['id_cli']; echo "<input id='id_cl' type='hidden' value='$id_cl'>"; ?></li>
           <li><a href="cerrarSesion.php"> Cerrar Sesión </a></li>
 
     		</ul>
@@ -72,6 +94,7 @@
 
           <button type="button" class="close" data-dismiss="modal"><a href="#"><span class="glyphicon glyphicon-remove"></span></a></button>
         </div>
+        <div id="mod_body">
         <div class="modal-body">
           <table class="table" cellpadding="5px" width="100%">
             <thead class="cartHeader" display="off">
@@ -83,7 +106,7 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody class="cartBody">
+            <tbody id="lista_ped" class="cartBody">
               
               <?=$cart->get_items();?>
             </tbody>
@@ -92,10 +115,11 @@
         <div class="modal-footer">
           <table class="table">
             <tr>
-              <th colspan="3">Total pagar: $<?=$cart->get_total_payment();?></th>
-              <th colspan="3"><button class="btn btn-success">Confirmar Pedido</button></th>
+              <th colspan="3">Total pagar: $<span id="total_ped"><?=$cart->get_total_payment();?><span></th>
+              <th colspan="3"><button id="btn_pedido" class="btn btn-success">Confirmar Pedido</button></th>
             </tr>
           </table>
+        </div>
         </div>
       </div>
       

@@ -32,7 +32,7 @@
 				include("conex.inc");
 
 				$id = $_GET["id"];
-				$consulta = "SELECT Nombre, Precio,Descripcion FROM producto WHERE ID_Producto='$id'";
+				$consulta = "SELECT Nombre, Precio,Descripcion FROM producto WHERE Id_Producto='$id'";
 				$respuesta = mysqli_query($db, $consulta);
 				echo "<table class='table'><tr> <td><b>Nombre</b></td> <td><b>Descripcion</b></td> <td><b>Precio</b></td> </tr>";
 				while($fila=mysqli_fetch_object($respuesta))

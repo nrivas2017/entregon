@@ -59,10 +59,10 @@ function VerPed(){
 		document.getElementById("capa").innerHTML = objAjax.responseText;
 		}
 
-function PedListo(id){
-	if (!confirm("¿Esta listo el pedido "+id+"?"))//OK=True Cancel=False
+function PedEnviado(id){
+	if (!confirm("¿Se envió el pedido "+id+"?"))//OK=True Cancel=False
 		return;
-	url = "PHP/PedListo.php?id="+id;
+	url = "PHP/PedEnviado.php?id="+id;
 	objAjax.open("GET",url)
 	objAjax.send(null)
 //PASO03: Recibir la respuesta del servidor
@@ -100,4 +100,16 @@ function AdminIngre(){
 function VerForm(){
 	if(objAjax.readyState==4)
 		document.getElementById("capa").innerHTML = objAjax.responseText;
+		}
+
+function DetallePed(id){
+	url = "PHP/VerPedido.php?id="+id;
+	objAjax.open("GET",url)
+	objAjax.send(null)
+//PASO03: Recibir la respuesta del servidor
+	objAjax.onreadystatechange = VerDetalle;
+	}
+function VerDetalle(){
+	if(objAjax.readyState==4)
+		document.getElementById("mod_body").innerHTML = objAjax.responseText;
 		}

@@ -3,9 +3,9 @@ session_start();
 include("PHP/conex.inc");
 
 $ema = $_POST["ema"];
-$passw = $_POST["pass"];
+$passw = md5($_POST["pass"]);
 
-$consulta = "SELECT nombre,email,pass,tipo FROM login WHERE email='$ema' AND pass='$passw'";
+$consulta = "SELECT cli.Id_Cliente,cli.nombre,us.email,us.password,us.tipo FROM cliente as cli INNER JOIN usuario as us ON cli.Id_Usuario=us.Id_Usuario WHERE us.email='$ema' AND us.password='$passw'";
 $respuesta = mysqli_query($db, $consulta);
 $res=mysqli_fetch_object($respuesta);
 if(isset($res->email)){
@@ -15,11 +15,13 @@ if(isset($res->email)){
 		header("Location: AdminMaqueta.php");
 	}else{
 		$nombre=$res->nombre;
+		$Id_Cliente=$res->Id_Cliente;
 		$_SESSION['estado'] = "user";
 		$_SESSION['nombre'] = "$nombre";
+		$_SESSION['id_cli'] = "$Id_Cliente";
 		header("Location: index.php");
 	}
 }else{
-	header("Location: index.php?error=Usuario+o+contraseña+inválida");
+	header("Location: index.php?msj=Usuario+o+contraseña+inválida");
 }
 ?>
