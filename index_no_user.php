@@ -30,13 +30,13 @@
             x=1;
           }
           if (x=="Sandwichs"){
-            x=6;
-          }
-          if (x=="Salchipapas"){
             x=4;
           }
-          if (x=="beber"){
+          if (x=="Salchipapas"){
             x=5;
+          }
+          if (x=="beber"){
+            x=6;
           }
 
           $.ajax({

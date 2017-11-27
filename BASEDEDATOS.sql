@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2017 a las 09:22:09
+-- Tiempo de generación: 27-11-2017 a las 10:26:31
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -43,7 +43,7 @@ INSERT INTO `categoria` (`Id_Categoria`, `N_Categoria`) VALUES
 (3, 'Comida'),
 (4, 'Sandwichs'),
 (5, 'Salchipapas'),
-(6, 'Bebesibles');
+(6, 'ParaBeber');
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,8 @@ INSERT INTO `producto` (`Id_Producto`, `Nombre`, `Precio`, `Descripcion`, `Id_Ca
 (9, 'Salchipapa Grande', 1500, 'Salchipapa Grande', 5, 'PGrande.jpg'),
 (10, 'CocaCola 1.5lts', 1600, 'CocaCola 1.5lts', 6, 'CC15.jpg'),
 (11, 'Cerveza Artesanal', 2500, 'Cerveza Artesanal', 6, 'CArtesanal.jpg'),
-(12, 'Jugo 1.5lts Piña', 1200, 'Jugo 1.5lts Piña', 6, 'Jugo15.jpg');
+(12, 'Jugo 1.5lts Piña', 1200, 'Jugo 1.5lts Piña', 6, 'Jugo15.jpg'),
+(13, 'Completo + Bebida', 1500, 'Completp + Bebida', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -249,7 +250,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `Id_Cliente` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_Cliente` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `detalle`
 --
@@ -269,12 +270,12 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `Id_Producto` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `Id_Producto` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id_Usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_Usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Restricciones para tablas volcadas
 --
