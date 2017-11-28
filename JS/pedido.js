@@ -1,5 +1,5 @@
 $(document).ready(Principal);
-
+var msj="";
 function Principal(){
 	$("#btn_pedido").click(Obtener);
 }
@@ -21,6 +21,16 @@ function Enviar_D(id,z,x,c,v){
         }
     })
 }
+
+function correo(id,msj){
+	$.ajax({
+	url:"PHP/email.php?id="+id+"&msj="+msj,
+	success: function(datos){
+		x=1;
+        }
+    })
+}
+
 function Obtener(){
 	var x = $("#lista_ped > tr").length;
 	var id_cl = $("#id_cl").val();
@@ -31,8 +41,10 @@ function Obtener(){
 		var precio = $("#lista_ped > tr:nth-child("+i+") >.precio").text();
 		var cantidad = $("#lista_ped > tr:nth-child("+i+") >.cantidad").text();
 		var subtotal = $("#lista_ped > tr:nth-child("+i+") >.subtotal").text();
+		msj+=nombre+" x"+cantidad+" precio: "+precio+" SubTotal: "+subtotal+" - ";
 		Enviar_D(id_cl,nombre,precio,cantidad,subtotal);
 		}
+	correo(id_cl,msj);
 	alert("Pedido Realizado =)");
 }
 
